@@ -11,17 +11,51 @@
   <link rel="stylesheet" href="_ds/broadsheet-4c5981e7-34b1-46e4-919e-a2b9fdb9e0fa/styles.css">
   <script src="_ds/broadsheet-4c5981e7-34b1-46e4-919e-a2b9fdb9e0fa/_ds_bundle.js"></script>
   <style>
-    body{margin:0;background:var(--color-bg);color:var(--color-text);font-family:var(--font-body)}
+    body{margin:0;color:var(--color-text);font-family:var(--font-body);
+      background:
+        radial-gradient(circle at 1px 1px, color-mix(in srgb, var(--color-text) 12%, transparent) 1px, transparent 0) -8px -8px/22px 22px,
+        linear-gradient(160deg, color-mix(in srgb, var(--color-accent) 6%, var(--color-bg)) 0%, var(--color-bg) 40%, color-mix(in srgb, var(--color-accent-2) 6%, var(--color-bg)) 100%);
+      background-attachment:fixed}
     a{color:var(--color-accent)}
     a:hover{color:var(--color-accent-700)}
     .wrap{max-width:1280px;margin:0;padding:0 var(--space-8)}
-    .badges{display:flex;gap:8px;flex-wrap:wrap}
-    .exp-card{display:flex;flex-direction:column;gap:6px}
+    .grad-text{background:linear-gradient(90deg,var(--color-accent),var(--color-accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .section-kicker{display:flex;align-items:center;gap:10px;margin:0 0 var(--space-2)}
+    .section-kicker .bar{width:22px;height:2px;flex:none;background:linear-gradient(90deg,var(--color-accent),var(--color-accent-2))}
+    .section-kicker .txt{font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;font-family:var(--font-heading)}
+    .panel{background:var(--color-bg);border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);padding:var(--space-3);display:flex;flex-direction:column;gap:6px}
+    .panel-row{flex-direction:row;align-items:flex-start;gap:var(--space-3)}
+    .pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;padding:6px 12px;border-radius:999px}
+    .pill .dot{width:7px;height:7px;border-radius:50%;flex:none}
+    .pill-outline{border:1px solid var(--color-divider);background:transparent}
     .contact-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
     .stat-tile{display:flex;flex-direction:column;gap:2px}
-    .stat-tile b{font-size:34px;font-weight:600;color:var(--color-text);font-family:var(--font-heading)}
-    .stat-tile span{font-size:12px;color:var(--color-neutral-700)}
+    .logo-row{display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-3)}
+    .logo-tile{display:flex;align-items:center;gap:10px;background:var(--color-bg);border-radius:var(--radius-lg);box-shadow:var(--shadow-md);padding:10px 18px}
+    .logo-tile img{height:26px;width:auto;display:block}
+    .logo-tile span{font-size:14px;font-weight:600}
+    .logo-mono{width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:10px;color:#fff;font-family:var(--font-heading);flex:none}
     .about-icon{flex:none;width:40px;height:40px;border-radius:var(--radius-md);background:var(--color-accent-100);color:var(--color-accent-700);display:flex;align-items:center;justify-content:center}
+    .hero-kicker{display:flex;align-items:center;gap:10px;margin:0 0 var(--space-3)}
+    .hero-kicker .bar{width:28px;height:2px;flex:none;background:linear-gradient(90deg,var(--color-accent),var(--color-accent-2))}
+    .hero-kicker .txt{font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;font-family:var(--font-heading);
+      background:linear-gradient(90deg,var(--color-accent),var(--color-accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero-name{font-size:58px;font-weight:700;margin:0 0 var(--space-3);line-height:1.05}
+    .hero-name .accent{display:block;font-style:italic;
+      background:linear-gradient(90deg,var(--color-accent),var(--color-accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero-role{font-size:17px;font-weight:600;margin:0 0 var(--space-2)}
+    .btn-gradient{background:linear-gradient(90deg,var(--color-accent),var(--color-accent-2));color:#fff;border-color:transparent}
+    .btn-gradient:hover{filter:brightness(1.08)}
+    .btn-gradient:active{filter:brightness(0.96)}
+    .impact-card{position:relative;background:var(--color-bg);border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);padding:var(--space-4);overflow:hidden}
+    .impact-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--color-accent),var(--color-accent-2))}
+    .impact-stats{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3)}
+    .impact-stat{background:var(--color-surface);border-radius:var(--radius-md);padding:var(--space-3)}
+    .impact-stat b{display:block;font-size:30px;line-height:1.1;font-family:var(--font-heading);
+      background:linear-gradient(90deg,var(--color-accent),var(--color-accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .impact-stat span{font-size:12px;color:var(--color-neutral-700)}
+    footer{position:relative}
+    footer::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--color-accent),var(--color-accent-2))}
     @media (max-width: 900px){
       .hero-grid{grid-template-columns:1fr !important}
     }
@@ -33,7 +67,6 @@
   </style>
 </helmet>
 <nav class="nav wrap">
-  <div class="nav-brand">Karthikeyan Jaganathan</div>
   <a href="index.dc.html" aria-current="page">Home</a>
   <a href="experience.dc.html">Experience</a>
   <a href="contact.dc.html">Contact</a>
@@ -41,56 +74,72 @@
 
 <div class="wrap hero-grid" style="padding-top:var(--space-8);padding-bottom:var(--space-8);display:grid;grid-template-columns:minmax(0,1.3fr) minmax(280px,420px);gap:var(--space-8);align-items:start">
   <div style="max-width:600px">
-    <h6 style="color:var(--color-accent);margin:0 0 var(--space-2);font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-family:var(--font-heading)">Cloud Data Architect · 15+ Years</h6>
-    <h1 style="font-size:58px;font-weight:600;margin:0 0 var(--space-3);line-height:1.05">Karthikeyan Jaganathan</h1>
-    <p style="font-size:19px;margin:0 0 var(--space-2);font-style:italic">Director, Cloud Data Engineering &amp; Analytics — Azure &amp; Snowflake Expert, Microsoft Fabric.</p>
+    <div class="hero-kicker"><span class="bar"></span><span class="txt">Cloud Data Architect · 15+ Years</span></div>
+    <h1 class="hero-name">Karthikeyan<span class="accent">Jaganathan</span></h1>
+    <p class="hero-role">Director, Cloud Data Engineering &amp; Analytics · Azure &amp; Snowflake Expert · Microsoft Fabric</p>
     <p style="font-size:16px;opacity:.85;margin:0 0 var(--space-4);max-width:540px">Leading enterprise data modernization across finance, telecom, and technology — from client strategy and pre-sales through delivery, governance, and platform architecture.</p>
     <div style="display:flex;gap:var(--space-3)">
-      <a class="btn btn-primary" href="experience.dc.html">View Experience</a>
+      <a class="btn btn-gradient" href="experience.dc.html">View Experience →</a>
       <a class="btn btn-secondary" href="contact.dc.html">Contact</a>
     </div>
   </div>
 
-  <div class="card elev-sm" style="padding:var(--space-4);gap:var(--space-4);align-self:start;height:fit-content">
+  <div class="impact-card">
     <span class="card-kicker">Impact at a Glance</span>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3)">
-      <div class="stat-tile"><b>15+</b><span>Years Experience</span></div>
-      <div class="stat-tile"><b>9</b><span>Enterprise Engagements</span></div>
-      <div class="stat-tile"><b>4</b><span>Cloud Ecosystems Led</span></div>
-      <div class="stat-tile"><b>4</b><span>Certifications</span></div>
-    </div>
-    <div class="badges">
-      <span class="tag tag-accent">Azure</span><span class="tag tag-accent">MS Fabric</span><span class="tag tag-accent-2">Snowflake</span><span class="tag tag-accent-2">Databricks</span><span class="tag tag-neutral">Power BI</span><span class="tag tag-neutral">AWS</span>
+    <div class="impact-stats" style="margin-top:var(--space-3)">
+      <div class="impact-stat"><b>15+</b><span>Years Experience</span></div>
+      <div class="impact-stat"><b>9</b><span>Enterprise Engagements</span></div>
+      <div class="impact-stat"><b>4</b><span>Cloud Ecosystems Led</span></div>
+      <div class="impact-stat"><b>4</b><span>Certifications</span></div>
     </div>
   </div>
 </div>
 
-<div class="wrap about-grid" style="padding-top:var(--space-6);padding-bottom:var(--space-8);display:grid;grid-template-columns:1.1fr 1fr;gap:var(--space-8);align-items:start">
+<div class="wrap" style="padding-bottom:var(--space-8)">
+  <div class="section-kicker"><span class="bar"></span><span class="txt grad-text">Core Platforms</span></div>
+  <div class="logo-row">
+    <div class="logo-tile"><img src="assets/tech-logos/azure.svg" alt="Microsoft Azure"><span>Azure</span></div>
+    <div class="logo-tile"><span class="logo-mono" style="background:linear-gradient(135deg,var(--color-accent),var(--color-accent-700))">MF</span><span>Microsoft Fabric</span></div>
+    <div class="logo-tile"><img src="assets/tech-logos/snowflake.svg" alt="Snowflake"><span>Snowflake</span></div>
+    <div class="logo-tile"><img src="assets/tech-logos/databricks.svg" alt="Databricks"><span>Databricks</span></div>
+    <div class="logo-tile"><span class="logo-mono" style="background:linear-gradient(135deg,var(--color-accent-2),var(--color-accent-2-700))">BI</span><span>Power BI</span></div>
+    <div class="logo-tile"><img src="assets/tech-logos/aws.svg" alt="Amazon Web Services" style="height:20px"></div>
+  </div>
+</div>
+
+<div class="wrap about-grid" style="padding-bottom:var(--space-8);display:grid;grid-template-columns:1.1fr 1fr;gap:var(--space-8);align-items:start">
   <div>
-    <h6 style="color:var(--color-accent);margin:0 0 var(--space-2);font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-family:var(--font-heading)">About Me</h6>
+    <div class="section-kicker"><span class="bar"></span><span class="txt grad-text">About Me</span></div>
     <h2 style="font-size:32px;margin:0 0 var(--space-3);line-height:1.15">Cloud Data Architect &amp; Analytics Leader</h2>
     <p style="font-size:16px;margin:0 0 var(--space-3)">Data &amp; analytics technical partner with <em>15+ years</em> designing and scaling cloud data platforms on Azure, Microsoft Fabric, Snowflake, and AWS for finance, telecom, and enterprise technology clients.</p>
     <p style="font-size:16px;margin:0 0 var(--space-3)">Leads architecture end-to-end — ingestion through governance and BI — defining data strategy, integration patterns, and compliance frameworks alongside business and technology stakeholders.</p>
     <p style="font-size:16px;margin:0 0 var(--space-4)">Trusted pre-sales partner: leads whiteboarding sessions, executive demos, and RFP/RFI responses, while overseeing delivery, staffing, and financials for multiple enterprise engagements.</p>
-    <div class="badges">
-      <span class="tag tag-outline">Microsoft Fabric</span><span class="tag tag-outline">Azure Synapse</span><span class="tag tag-outline">Snowflake</span><span class="tag tag-outline">Databricks</span><span class="tag tag-outline">Power BI</span><span class="tag tag-outline">Azure Data Factory</span><span class="tag tag-outline">AWS Glue</span><span class="tag tag-outline">Talend</span>
+    <div style="display:flex;flex-wrap:wrap;gap:8px">
+      <span class="pill pill-outline" style="color:var(--color-accent-700)"><span class="dot" style="background:var(--color-accent-600)"></span>Microsoft Fabric</span>
+      <span class="pill pill-outline" style="color:var(--color-accent-700)"><span class="dot" style="background:var(--color-accent-400)"></span>Azure Synapse</span>
+      <span class="pill pill-outline" style="color:var(--color-accent-2-700)"><span class="dot" style="background:var(--color-accent-2-600)"></span>Snowflake</span>
+      <span class="pill pill-outline" style="color:var(--color-accent-2-700)"><span class="dot" style="background:var(--color-accent-2-400)"></span>Databricks</span>
+      <span class="pill pill-outline" style="color:var(--color-neutral-800)"><span class="dot" style="background:var(--color-neutral-600)"></span>Power BI</span>
+      <span class="pill pill-outline" style="color:var(--color-accent-700)"><span class="dot" style="background:var(--color-accent-700)"></span>Azure Data Factory</span>
+      <span class="pill pill-outline" style="color:var(--color-neutral-800)"><span class="dot" style="background:var(--color-process-yellow)"></span>AWS Glue</span>
+      <span class="pill pill-outline" style="color:var(--color-accent-2-700)"><span class="dot" style="background:var(--color-accent-2-700)"></span>Talend</span>
     </div>
   </div>
 
   <div style="display:flex;flex-direction:column;gap:var(--space-3)">
-    <div class="card elev-sm" style="flex-direction:row;align-items:flex-start;gap:var(--space-3)">
+    <div class="panel panel-row">
       <span class="about-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="6" rx="7" ry="2.5"></ellipse><path d="M5 6v6c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5V6"></path><path d="M5 12v6c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-6"></path></svg></span>
       <div><h4 class="card-title">Data Architecture</h4><p class="card-body">Medallion, lakehouse, and DW patterns designed end-to-end across Azure, Fabric, Snowflake, and AWS.</p></div>
     </div>
-    <div class="card elev-sm" style="flex-direction:row;align-items:flex-start;gap:var(--space-3)">
+    <div class="panel panel-row">
       <span class="about-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="9" width="16" height="11" rx="2"></rect><path d="M12 9V5"></path><circle cx="12" cy="3.5" r="1.5"></circle><circle cx="9" cy="14.5" r="1.2"></circle><circle cx="15" cy="14.5" r="1.2"></circle></svg></span>
       <div><h4 class="card-title">Integration &amp; ETL</h4><p class="card-body">Microsoft Fabric Pipelines, Azure Data Factory, Talend, Informatica, and AWS Glue across 9 enterprise engagements.</p></div>
     </div>
-    <div class="card elev-sm" style="flex-direction:row;align-items:flex-start;gap:var(--space-3)">
+    <div class="panel panel-row">
       <span class="about-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20V10"></path><path d="M12 20V4"></path><path d="M20 20v-7"></path></svg></span>
       <div><h4 class="card-title">BI &amp; Analytics</h4><p class="card-body">Power BI, Tableau, and Apache Superset — dashboards, calculated sets, and data-blended reporting for stakeholders.</p></div>
     </div>
-    <div class="card elev-sm" style="flex-direction:row;align-items:flex-start;gap:var(--space-3)">
+    <div class="panel panel-row">
       <span class="about-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8"></circle><circle cx="12" cy="12" r="4"></circle><circle cx="12" cy="12" r="0.8" fill="currentColor"></circle></svg></span>
       <div><h4 class="card-title">Pre-Sales &amp; Leadership</h4><p class="card-body">RFP/RFI responses, executive whiteboarding, and solution demos — leading cross-functional delivery teams.</p></div>
     </div>
@@ -98,16 +147,17 @@
 </div>
 
 <div class="wrap" style="padding-bottom:var(--space-6)">
+  <div class="section-kicker"><span class="bar"></span><span class="txt grad-text">Career</span></div>
   <h2>Recent Experience</h2>
   <div class="exp-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-3);margin-top:var(--space-3)">
-    <div class="card exp-card">
-      <span class="card-kicker">MAY 2023 — PRESENT</span>
+    <div class="panel">
+      <span class="card-kicker grad-text">MAY 2023 — PRESENT</span>
       <h4 class="card-title">Director, Cloud Data Engineering &amp; Analytics</h4>
       <p class="card-meta">Numentica LLC, Dallas, Texas</p>
       <p class="card-body">Lead enterprise cloud data platform strategy, pre-sales, and delivery — partnering with stakeholders on architecture, governance, and modernization roadmaps.</p>
     </div>
-    <div class="card exp-card">
-      <span class="card-kicker">NOV 2020 — MAY 2023</span>
+    <div class="panel">
+      <span class="card-kicker grad-text">NOV 2020 — MAY 2023</span>
       <h4 class="card-title">Data Architect — BI &amp; Integration</h4>
       <p class="card-meta">Maruthi Technologies Inc. DBA Anblicks, Dallas, Texas</p>
       <p class="card-body">Architected enterprise data platforms and reusable ETL frameworks across Azure and AWS for large-scale migration programs.</p>
@@ -117,12 +167,24 @@
 </div>
 
 <div class="wrap" style="padding-bottom:var(--space-8)">
+  <div class="section-kicker"><span class="bar"></span><span class="txt grad-text">Toolkit</span></div>
   <h2>Skills &amp; Certifications</h2>
-  <div class="badges" style="margin-top:var(--space-2)">
-    <span class="tag tag-accent">Azure</span><span class="tag tag-accent">Microsoft Fabric</span><span class="tag tag-accent">Snowflake</span><span class="tag tag-accent">AWS</span><span class="tag tag-accent">Databricks</span><span class="tag tag-accent-2">Power BI</span><span class="tag tag-accent-2">Tableau</span><span class="tag tag-neutral">Python</span><span class="tag tag-neutral">Core Java</span>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:var(--space-2)">
+    <span class="pill" style="background:var(--color-accent-100);color:var(--color-accent-800)"><span class="dot" style="background:var(--color-accent-600)"></span>Azure</span>
+    <span class="pill" style="background:var(--color-accent-100);color:var(--color-accent-800)"><span class="dot" style="background:var(--color-accent-700)"></span>Microsoft Fabric</span>
+    <span class="pill" style="background:var(--color-accent-100);color:var(--color-accent-800)"><span class="dot" style="background:var(--color-accent-400)"></span>Snowflake</span>
+    <span class="pill" style="background:var(--color-accent-2-100);color:var(--color-accent-2-800)"><span class="dot" style="background:var(--color-accent-2-600)"></span>AWS</span>
+    <span class="pill" style="background:var(--color-accent-2-100);color:var(--color-accent-2-800)"><span class="dot" style="background:var(--color-accent-2-400)"></span>Databricks</span>
+    <span class="pill" style="background:var(--color-neutral-100);color:var(--color-neutral-800)"><span class="dot" style="background:var(--color-neutral-600)"></span>Power BI</span>
+    <span class="pill" style="background:var(--color-neutral-100);color:var(--color-neutral-800)"><span class="dot" style="background:var(--color-process-yellow)"></span>Tableau</span>
+    <span class="pill" style="background:var(--color-accent-100);color:var(--color-accent-800)"><span class="dot" style="background:var(--color-accent-800)"></span>Python</span>
+    <span class="pill" style="background:var(--color-accent-2-100);color:var(--color-accent-2-800)"><span class="dot" style="background:var(--color-accent-2-800)"></span>Core Java</span>
   </div>
-  <div class="badges" style="margin-top:var(--space-2)">
-    <span class="tag tag-outline">Microsoft Certified: Azure Data Engineer Associate</span><span class="tag tag-outline">Snowflake Sales Professional Accreditation</span><span class="tag tag-outline">Certified Talend Data Integration Developer</span><span class="tag tag-outline">Microsoft Technology Associate (SQL Server)</span>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:var(--space-2)">
+    <span class="pill pill-outline" style="color:var(--color-accent-700)">Microsoft Certified: Azure Data Engineer Associate</span>
+    <span class="pill pill-outline" style="color:var(--color-accent-700)">Snowflake Sales Professional Accreditation</span>
+    <span class="pill pill-outline" style="color:var(--color-accent-700)">Certified Talend Data Integration Developer</span>
+    <span class="pill pill-outline" style="color:var(--color-accent-700)">Microsoft Technology Associate (SQL Server)</span>
   </div>
 </div>
 
