@@ -35,6 +35,7 @@
     .logo-tile{display:flex;flex-direction:row;align-items:center;gap:10px;padding:10px 18px;width:fit-content}
     .logo-tile img{height:26px;width:auto;display:block}
     .logo-mono{width:26px;height:26px;border-radius:var(--radius-sm);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:10px;font-family:var(--font-heading);flex:none}
+    .arch-icon{width:26px;height:26px;border-radius:var(--radius-sm);background:var(--color-accent-100);color:var(--color-accent-700);display:flex;align-items:center;justify-content:center;flex:none}
     @media (max-width: 900px){
       .hero-grid{grid-template-columns:1fr !important}
     }
@@ -43,6 +44,7 @@
       .stat-grid{grid-template-columns:repeat(2,1fr) !important}
       .about-grid{grid-template-columns:1fr !important}
       .skills-cert-grid{grid-template-columns:1fr !important}
+      .platforms-arch-grid{grid-template-columns:1fr !important}
     }
   </style>
 </helmet>
@@ -89,15 +91,43 @@
   </div>
 </div>
 
-<div class="wrap" style="padding-bottom:var(--space-8)">
-  <h6 style="color:var(--color-accent);margin:0 0 var(--space-2);font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-family:var(--font-heading)">Core Platforms</h6>
-  <div style="display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-3)">
-    <div class="card elev-sm logo-tile"><img src="assets/tech-logos/azure.svg" alt="Microsoft Azure"><span>Azure</span></div>
-    <div class="card elev-sm logo-tile"><span class="logo-mono" style="background:var(--color-accent)">MF</span><span>Microsoft Fabric</span></div>
-    <div class="card elev-sm logo-tile"><img src="assets/tech-logos/snowflake.svg" alt="Snowflake"><span>Snowflake</span></div>
-    <div class="card elev-sm logo-tile"><img src="assets/tech-logos/databricks.svg" alt="Databricks"><span>Databricks</span></div>
-    <div class="card elev-sm logo-tile"><span class="logo-mono" style="background:var(--color-accent-2)">BI</span><span>Power BI</span></div>
-    <div class="card elev-sm logo-tile"><img src="assets/tech-logos/aws.svg" alt="Amazon Web Services" style="height:20px"></div>
+<div class="wrap platforms-arch-grid" style="padding-bottom:var(--space-8);display:grid;grid-template-columns:1fr 1fr;gap:var(--space-8)">
+  <div>
+    <h6 style="color:var(--color-accent);margin:0 0 var(--space-2);font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-family:var(--font-heading)">Core Platforms</h6>
+    <div style="display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-3)">
+      <div class="card elev-sm logo-tile"><img src="assets/tech-logos/azure.svg" alt="Microsoft Azure"><span>Azure</span></div>
+      <div class="card elev-sm logo-tile"><span class="logo-mono" style="background:var(--color-accent)">MF</span><span>Microsoft Fabric</span></div>
+      <div class="card elev-sm logo-tile"><img src="assets/tech-logos/snowflake.svg" alt="Snowflake"><span>Snowflake</span></div>
+      <div class="card elev-sm logo-tile"><img src="assets/tech-logos/databricks.svg" alt="Databricks"><span>Databricks</span></div>
+      <div class="card elev-sm logo-tile"><span class="logo-mono" style="background:var(--color-accent-2)">BI</span><span>Power BI</span></div>
+      <div class="card elev-sm logo-tile"><img src="assets/tech-logos/aws.svg" alt="Amazon Web Services" style="height:20px"></div>
+    </div>
+  </div>
+  <div>
+    <h6 style="color:var(--color-accent);margin:0 0 var(--space-2);font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-family:var(--font-heading)">Data Architectures Implemented</h6>
+    <div style="display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-3)">
+      <div class="card elev-sm logo-tile">
+        <span class="arch-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="4" rx="1"></rect><rect x="4" y="10" width="16" height="4" rx="1"></rect><rect x="4" y="16" width="16" height="4" rx="1"></rect></svg></span>
+        <span>Medallion Architecture</span>
+      </div>
+      <div class="card elev-sm logo-tile">
+        <span class="arch-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 11l8-6 8 6"></path><path d="M6 10v9h12v-9"></path></svg></span>
+        <span>Lakehouse Architecture</span>
+      </div>
+      <div class="card elev-sm logo-tile">
+        <span class="arch-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="2.2"></circle><circle cx="12" cy="4" r="1.6"></circle><circle cx="12" cy="20" r="1.6"></circle><circle cx="4" cy="12" r="1.6"></circle><circle cx="20" cy="12" r="1.6"></circle><path d="M12 6.2V9.8M12 14.2v3.6M6 12h3.6M14.4 12H18"></path></svg></span>
+        <span>Data Warehouse (Star Schema)</span>
+      </div>
+      <div class="card elev-sm logo-tile">
+        <span class="arch-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="6" r="1.8"></circle><circle cx="18" cy="6" r="1.8"></circle><circle cx="6" cy="18" r="1.8"></circle><circle cx="18" cy="18" r="1.8"></circle><circle cx="12" cy="12" r="1.8"></circle><path d="M6 6l6 6M18 6l-6 6M6 18l6-6M18 18l-6-6"></path></svg></span>
+        <span>Data Mesh</span>
+      </div>
+      <div class="card elev-sm logo-tile"><span class="logo-mono" style="background:var(--color-accent-700)">λ</span><span>Lambda Architecture</span></div>
+      <div class="card elev-sm logo-tile">
+        <span class="arch-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 3v6c0 5-3 8-7 9-4-1-7-4-7-9V6z"></path><path d="M9.5 12l1.8 1.8L15 10"></path></svg></span>
+        <span>Data Vault 2.0</span>
+      </div>
+    </div>
   </div>
 </div>
 
