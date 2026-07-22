@@ -28,6 +28,10 @@
     .nav-bar .nav a{font-weight:600;padding:6px 12px;border-radius:var(--radius-md)}
     .nav-bar .nav a[aria-current='page']{background:var(--color-accent-100)}
     .nav-bar .nav a:hover{background:color-mix(in srgb, var(--color-text) 6%, transparent)}
+    .section-label{color:var(--color-accent);margin:0 0 var(--space-2);font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-family:var(--font-heading)}
+    .cert-card{flex-direction:row;align-items:center;gap:var(--space-3);padding:var(--space-3)}
+    .cert-badge{flex:none;width:48px;height:48px;object-fit:contain;display:block}
+    .cert-badge-mono{flex:none;width:48px;height:48px;border-radius:50%;background:var(--color-accent-100);color:var(--color-accent-700);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;font-family:var(--font-heading)}
     .logo-tile{display:flex;flex-direction:row;align-items:center;gap:10px;padding:10px 18px;width:fit-content}
     .logo-tile img{height:26px;width:auto;display:block}
     .logo-mono{width:26px;height:26px;border-radius:var(--radius-sm);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:10px;font-family:var(--font-heading);flex:none}
@@ -38,6 +42,7 @@
       .exp-grid{grid-template-columns:1fr !important}
       .stat-grid{grid-template-columns:repeat(2,1fr) !important}
       .about-grid{grid-template-columns:1fr !important}
+      .skills-cert-grid{grid-template-columns:1fr !important}
     }
   </style>
 </helmet>
@@ -149,11 +154,34 @@
 
 <div class="wrap" style="padding-bottom:var(--space-8)">
   <h2>Skills &amp; Certifications</h2>
-  <div class="badges" style="margin-top:var(--space-2)">
-    <span class="tag tag-accent">Azure</span><span class="tag tag-accent">Microsoft Fabric</span><span class="tag tag-accent">Snowflake</span><span class="tag tag-accent">AWS</span><span class="tag tag-accent">Databricks</span><span class="tag tag-accent-2">Power BI</span><span class="tag tag-accent-2">Tableau</span><span class="tag tag-neutral">Python</span><span class="tag tag-neutral">Core Java</span>
-  </div>
-  <div class="badges" style="margin-top:var(--space-2)">
-    <span class="tag tag-outline">Microsoft Certified: Azure Data Engineer Associate</span><span class="tag tag-outline">Snowflake Sales Professional Accreditation</span><span class="tag tag-outline">Certified Talend Data Integration Developer</span><span class="tag tag-outline">Microsoft Technology Associate (SQL Server)</span>
+  <div class="skills-cert-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-8);margin-top:var(--space-3)">
+    <div>
+      <h6 class="section-label">Skills</h6>
+      <div class="badges">
+        <span class="tag tag-accent">Azure</span><span class="tag tag-accent">Microsoft Fabric</span><span class="tag tag-accent">Snowflake</span><span class="tag tag-accent">AWS</span><span class="tag tag-accent">Databricks</span><span class="tag tag-accent-2">Power BI</span><span class="tag tag-accent-2">Tableau</span><span class="tag tag-neutral">Python</span><span class="tag tag-neutral">Core Java</span>
+      </div>
+    </div>
+    <div>
+      <h6 class="section-label">Certifications</h6>
+      <div style="display:flex;flex-direction:column;gap:var(--space-2)">
+        <div class="card elev-sm cert-card">
+          <img class="cert-badge" src="assets/certs/azure-data-engineer-associate.png" alt="Microsoft Certified: Azure Data Engineer Associate badge">
+          <div><h4 class="card-title" style="font-size:15px">Microsoft Certified: Azure Data Engineer Associate</h4><p class="card-meta">Microsoft</p></div>
+        </div>
+        <div class="card elev-sm cert-card">
+          <img class="cert-badge" src="assets/certs/snowflake-sales-professional.png" alt="Snowflake Sales Professional Accreditation badge">
+          <div><h4 class="card-title" style="font-size:15px">Snowflake Sales Professional Accreditation</h4><p class="card-meta">Snowflake</p></div>
+        </div>
+        <div class="card elev-sm cert-card">
+          <img class="cert-badge" src="assets/certs/talend-data-integration-developer.png" alt="Certified Talend Data Integration Developer badge">
+          <div><h4 class="card-title" style="font-size:15px">Certified Talend Data Integration Developer</h4><p class="card-meta">Talend (Qlik)</p></div>
+        </div>
+        <div class="card elev-sm cert-card">
+          <span class="cert-badge-mono">MS</span>
+          <div><h4 class="card-title" style="font-size:15px">Microsoft Technology Associate (SQL Server)</h4><p class="card-meta">Microsoft</p></div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
