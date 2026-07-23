@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/broadsheet-4c5981e7-34b1-46e4-919e-a2b9fdb9e0fa/styles.css">
+  <script src="_ds/broadsheet-4c5981e7-34b1-46e4-919e-a2b9fdb9e0fa/_ds_bundle.js"></script>
+  <style>
+    body{margin:0;background:var(--color-bg);color:var(--color-text);font-family:var(--font-body)}
+    a{color:var(--color-accent)}
+    a:hover{color:var(--color-accent-700)}
+    .wrap{max-width:840px;margin:0 auto;padding:0 var(--space-8)}
+    .nav-bar{background:var(--color-surface);border-bottom:1px solid var(--color-divider)}
+    .nav-bar .nav{padding-top:var(--space-4);padding-bottom:var(--space-4)}
+    .nav-bar .nav a{font-weight:600;padding:6px 12px;border-radius:var(--radius-md)}
+    .nav-bar .nav a[aria-current='page']{background:var(--color-accent-100)}
+    .nav-bar .nav a:hover{background:color-mix(in srgb, var(--color-text) 6%, transparent)}
+    .contact-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+    .article-card{gap:var(--space-2)}
+    .article-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
+  </style>
+</helmet>
+<div class="nav-bar">
+  <nav class="nav wrap">
+    <a href="index.dc.html">Home</a>
+    <a href="experience.dc.html">Experience</a>
+    <a href="articles.dc.html" aria-current="page">Data Patent Watch</a>
+    <a href="contact.dc.html">Contact</a>
+  </nav>
+</div>
+
+<div class="wrap" style="padding-top:var(--space-8);padding-bottom:var(--space-4)">
+  <h6 style="color:var(--color-accent);margin:0 0 var(--space-2);font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-family:var(--font-heading)">Data Intel By Karthik</h6>
+  <h1 style="font-size:38px;margin:0 0 var(--space-2)">Data Patent Watch</h1>
+  <p style="font-size:16px;opacity:.85">Patent-focused writing on data platform internals, published on LinkedIn as Data Intel By Karthik.</p>
+</div>
+
+<div class="wrap" style="padding-bottom:var(--space-8);display:flex;flex-direction:column;gap:var(--space-3)">
+
+  <div class="card elev-sm article-card">
+    <span class="card-kicker">EDITION 1 · PART 1 · JULY 2026</span>
+    <h3 class="card-title" style="font-size:19px">Snowflake Patent Explained: Probe-Side Annotated Join Decision Making</h3>
+    <p class="card-body">Snowflake's patent US 12,530,354 (granted January 2026) — why compile-time optimizers fail, how probe-side annotations work, the three-operator architecture, and how it compares to Spark's Adaptive Query Execution.</p>
+    <div class="article-tags">
+      <span class="tag tag-accent">Snowflake</span><span class="tag tag-accent-2">Query Optimization</span><span class="tag tag-neutral">Data Patent Watch</span>
+    </div>
+    <a class="btn btn-ghost" href="https://www.linkedin.com/posts/karthik-jaganathan_patent-activity-7477477445349060608-A3ab" target="_blank" rel="noopener" style="margin-top:var(--space-2);width:fit-content">Read on LinkedIn →</a>
+  </div>
+
+  <div class="card elev-sm article-card">
+    <span class="card-kicker">EDITION 1 · PART 2 · JULY 2026</span>
+    <h3 class="card-title" style="font-size:19px">Snowflake Patent Solves the Stale Statistics Problem</h3>
+    <p class="card-body">Query optimizers rely on cached statistics from the last ANALYZE, creating a "danger window" of stale data — a nightly ETL loads 50M rows at 2 AM, but by 6 AM the optimizer still assumes yesterday's row counts and picks a broadcast join that now moves 300GB unnecessarily. The patent's HJD (Hybrid Join Decision) operator fixes this by measuring actual row counts at runtime instead of relying on stale cached statistics.</p>
+    <div class="article-tags">
+      <span class="tag tag-accent">Snowflake</span><span class="tag tag-accent-2">Query Optimization</span><span class="tag tag-neutral">Data Patent Watch</span>
+    </div>
+    <a class="btn btn-ghost" href="https://www.linkedin.com/posts/karthik-jaganathan_data-patent-watch-2-compile-time-problem-ugcPost-7478209442107518976-3r3h" target="_blank" rel="noopener" style="margin-top:var(--space-2);width:fit-content">Read on LinkedIn →</a>
+  </div>
+
+  <div class="card elev-sm article-card">
+    <span class="card-kicker">EDITION 1 · PART 3 · JULY 2026</span>
+    <h3 class="card-title" style="font-size:19px">How Probe-Side Annotations Work</h3>
+    <p class="card-body">The optimizer defers strategy selection until runtime by embedding three components into the query plan: a threshold calculated from warehouse capacity and memory constraints, a watch list monitoring runtime signals like bloom filter performance, and a decision table mapping outcomes to strategies. Query plans become "conditional programs" rather than fixed artifacts — the probe side waits for the build side to report actual row counts before the Join Decision Manager picks broadcast or hash-join.</p>
+    <div class="article-tags">
+      <span class="tag tag-accent">Snowflake</span><span class="tag tag-accent-2">Query Optimization</span><span class="tag tag-neutral">Data Patent Watch</span>
+    </div>
+    <a class="btn btn-ghost" href="https://www.linkedin.com/posts/karthik-jaganathan_dataintelbykarthik-dataintelbykarthik-datapatentwatch-ugcPost-7480396465434021888-7g-n" target="_blank" rel="noopener" style="margin-top:var(--space-2);width:fit-content">Read on LinkedIn →</a>
+  </div>
+
+  <div class="card elev-sm article-card">
+    <span class="card-kicker">EDITION 1 · PART 4 · JULY 2026</span>
+    <h3 class="card-title" style="font-size:19px">The Three-Operator Architecture: HJB, HJD, HJP</h3>
+    <p class="card-body">Snowflake restructured its join operator by splitting one monolithic operator into three single-responsibility components: HJB (Hash-Join-Build) constructs the hash table and reports actual row counts; HJD (Hash-Join-Decision) takes those cardinality signals and decides broadcast vs. local sync; HJP (Hash-Join-Probe) executes the join using whichever method HJD selected. The patent's real value is the operator boundary itself — it's what makes deferring the decision to runtime possible.</p>
+    <div class="article-tags">
+      <span class="tag tag-accent">Snowflake</span><span class="tag tag-accent-2">Query Optimization</span><span class="tag tag-neutral">Data Patent Watch</span>
+    </div>
+    <a class="btn btn-ghost" href="https://www.linkedin.com/posts/karthik-jaganathan_dataintelbykarthik-dataintelbykarthik-datapatentwatch-ugcPost-7483692294252953602-h74R" target="_blank" rel="noopener" style="margin-top:var(--space-2);width:fit-content">Read on LinkedIn →</a>
+  </div>
+
+</div>
+
+<footer style="margin-top:var(--space-8)">
+  <div class="wrap contact-row" style="padding:var(--space-6) var(--space-8);justify-content:space-between">
+    <span style="font-size:13px;color:var(--color-neutral-700)">© 2026 Karthikeyan Jaganathan</span>
+    <div class="contact-row">
+      <a href="mailto:karthikj18@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/karthikeyan-jaganathan/">LinkedIn</a>
+      <a href="https://www.credly.com/users/karthikeyan-jaganathan.4eeb4a43">Credly</a>
+    </div>
+  </div>
+</footer>
+
+</x-dc>
+</body>
+</html>
