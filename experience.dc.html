@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/broadsheet-4c5981e7-34b1-46e4-919e-a2b9fdb9e0fa/styles.css">
+  <script src="_ds/broadsheet-4c5981e7-34b1-46e4-919e-a2b9fdb9e0fa/_ds_bundle.js"></script>
+  <style>
+    body{margin:0;background:var(--color-bg);color:var(--color-text);font-family:var(--font-body)}
+    a{color:var(--color-accent)}
+    a:hover{color:var(--color-accent-700)}
+    .wrap{max-width:1040px;margin:0 auto;padding:0 var(--space-8)}
+    .nav-bar{background:var(--color-surface);border-bottom:1px solid var(--color-divider)}
+    .nav-bar .nav{padding-top:var(--space-4);padding-bottom:var(--space-4)}
+    .nav-bar .nav a{font-weight:600;padding:6px 12px;border-radius:var(--radius-md)}
+    .nav-bar .nav a[aria-current='page']{background:var(--color-accent-100)}
+    .nav-bar .nav a:hover{background:color-mix(in srgb, var(--color-text) 6%, transparent)}
+    .contact-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+
+    .timeline{display:flex;flex-direction:column}
+    .tl-item{display:grid;grid-template-columns:150px 24px 1fr;column-gap:var(--space-4);padding-bottom:var(--space-6)}
+    .tl-item:last-child{padding-bottom:0}
+    .tl-date{padding-top:2px;text-align:right;font-size:13px;font-weight:600;color:var(--color-neutral-700);font-family:var(--font-heading)}
+    .tl-now{display:inline-block;margin-top:4px;font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--color-accent-700);background:var(--color-accent-100);padding:2px 8px;border-radius:999px}
+    .tl-track{position:relative;display:flex;justify-content:center}
+    .tl-track::before{content:"";position:absolute;top:4px;bottom:calc(-1 * var(--space-6));left:50%;width:2px;background:var(--color-divider);transform:translateX(-50%)}
+    .tl-item:last-child .tl-track::before{display:none}
+    .tl-dot{width:13px;height:13px;margin-top:3px;border-radius:50%;background:var(--color-accent);box-shadow:0 0 0 3px var(--color-bg);z-index:1}
+    .tl-dot.outline{background:var(--color-bg);border:2px solid var(--color-accent-400)}
+    .tl-role{font-family:var(--font-heading);font-weight:600;font-size:19px;margin:0}
+    .tl-company{font-size:14px;font-weight:600;color:var(--color-accent-700);margin-top:2px}
+    .tl-loc{font-size:12px;color:var(--color-neutral-700);margin-top:1px}
+    .tl-summary{font-size:14px;line-height:1.6;margin:8px 0 0;opacity:.9}
+
+    @media (max-width: 640px){
+      .tl-item{grid-template-columns:20px 1fr}
+      .tl-date{grid-column:1 / span 2;text-align:left;padding-top:0;margin-bottom:6px}
+      .tl-track::before{top:4px}
+    }
+  </style>
+</helmet>
+<div class="nav-bar">
+  <nav class="nav wrap">
+    <a href="index.dc.html">Home</a>
+    <a href="experience.dc.html" aria-current="page">Experience</a>
+    <a href="contact.dc.html">Contact</a>
+  </nav>
+</div>
+
+<div class="wrap" style="padding-top:var(--space-8);padding-bottom:var(--space-4);max-width:720px">
+  <h6 style="color:var(--color-accent);margin:0 0 var(--space-2);font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-family:var(--font-heading)">Career Timeline</h6>
+  <h1 style="font-size:38px;margin:0 0 var(--space-2)">Experience</h1>
+  <p style="font-size:16px;opacity:.85">15+ years across ETL engineering, BI, cloud data architecture, and enterprise data leadership.</p>
+</div>
+
+<div class="wrap" style="padding-bottom:var(--space-8)">
+  <div class="timeline">
+
+    <div class="tl-item">
+      <div class="tl-date">May 2023 — Present<br><span class="tl-now">Now</span></div>
+      <div class="tl-track"><span class="tl-dot"></span></div>
+      <div>
+        <h3 class="tl-role">Director, Cloud Data Engineering &amp; Analytics</h3>
+        <p class="tl-company">Numentica LLC</p>
+        <p class="tl-loc">Dallas, Texas</p>
+        <p class="tl-summary">Leads enterprise cloud data platform strategy, pre-sales, and delivery — partnering with stakeholders on architecture, governance, and modernization roadmaps across Azure, Microsoft Fabric, Snowflake, and AWS.</p>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-date">Nov 2020 — May 2023</div>
+      <div class="tl-track"><span class="tl-dot"></span></div>
+      <div>
+        <h3 class="tl-role">Data Architect — BI &amp; Integration</h3>
+        <p class="tl-company">Maruthi Technologies Inc. DBA Anblicks</p>
+        <p class="tl-loc">Dallas, Texas</p>
+        <p class="tl-summary">Led enterprise data platform architecture and built reusable, configuration-driven cloud data processing frameworks for migration and integration across SQL Server, Snowflake, and Oracle on Azure and AWS.</p>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-date">Nov 2019 — Nov 2020</div>
+      <div class="tl-track"><span class="tl-dot"></span></div>
+      <div>
+        <h3 class="tl-role">Sr. Talend Big Data AWS Developer</h3>
+        <p class="tl-company">Dimension Inc</p>
+        <p class="tl-loc">Dulles, Virginia</p>
+        <p class="tl-summary">Architected and led migration of an on-prem application and data processing to AWS, building a data lake on S3 and delivering large-scale ETL and enterprise data warehouse applications with Agile delivery.</p>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-date">May 2017 — Oct 2019</div>
+      <div class="tl-track"><span class="tl-dot"></span></div>
+      <div>
+        <h3 class="tl-role">Sr. Talend Big Data AWS BI Developer</h3>
+        <p class="tl-company">Smartificia Technologies Private Limited</p>
+        <p class="tl-loc">Coimbatore, India</p>
+        <p class="tl-summary">Designed a performance-optimized data warehouse on AWS Redshift and built big data solutions across HDFS, Spark, Hive, Impala, HBase, and Kafka, delivering Tableau dashboards for business intelligence reporting.</p>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-date">May 2016 — May 2017</div>
+      <div class="tl-track"><span class="tl-dot"></span></div>
+      <div>
+        <h3 class="tl-role">Senior Software Engineer</h3>
+        <p class="tl-company">Zafin Software Center of Excellence</p>
+        <p class="tl-loc">Bangalore, India</p>
+        <p class="tl-summary">Built a banking analytics product from the ground up using Talend Big Data, developing Hive and SQL-based data pipelines across HDFS, Impala, and Sqoop.</p>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-date">Mar 2014 — Feb 2016</div>
+      <div class="tl-track"><span class="tl-dot"></span></div>
+      <div>
+        <h3 class="tl-role">Senior Engineer</h3>
+        <p class="tl-company">Brillio</p>
+        <p class="tl-loc">Palo Alto, California</p>
+        <p class="tl-summary">Automated extraction and processing of social media data via Talend and Hadoop/Hive, and built interactive Tableau dashboards with row-level security, action filters, and data blending.</p>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-date">Jun 2012 — Feb 2014</div>
+      <div class="tl-track"><span class="tl-dot"></span></div>
+      <div>
+        <h3 class="tl-role">Senior Software Engineer</h3>
+        <p class="tl-company">HCL Technologies</p>
+        <p class="tl-loc">Bangalore, India</p>
+        <p class="tl-summary">Defined ETL architecture and full-lifecycle plans for enterprise data warehousing, designing fact/dimension models and managing Talend Administration Console scheduling.</p>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-date">Jan 2011 — Jun 2012</div>
+      <div class="tl-track"><span class="tl-dot"></span></div>
+      <div>
+        <h3 class="tl-role">Software Developer</h3>
+        <p class="tl-company">PRGX India Private Limited</p>
+        <p class="tl-loc">Pune, India</p>
+        <p class="tl-summary">Converted business requirements into data warehouse designs and built Talend ETL jobs loading Oracle, COBOL, flat-file, and XML sources into an Oracle-based data mart.</p>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-date">Jan 2010 — Jan 2011</div>
+      <div class="tl-track"><span class="tl-dot"></span></div>
+      <div>
+        <h3 class="tl-role">Database Developer</h3>
+        <p class="tl-company">Ideal Networks &amp; Systems</p>
+        <p class="tl-loc">India</p>
+        <p class="tl-summary">Built SSIS mappings and reusable transformations for star-schema ETL, tuning performance across source, target, and system levels, plus 24x7 production support.</p>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-date">2006 — 2010</div>
+      <div class="tl-track"><span class="tl-dot outline"></span></div>
+      <div>
+        <h3 class="tl-role">B.E., Computer Science and Engineering</h3>
+        <p class="tl-company">Sengunthar Engineering College</p>
+        <p class="tl-loc">Tamil Nadu, India — Anna University</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer style="margin-top:var(--space-8)">
+  <div class="wrap contact-row" style="padding:var(--space-6) var(--space-8);justify-content:space-between">
+    <span style="font-size:13px;color:var(--color-neutral-700)">© 2026 Karthikeyan Jaganathan</span>
+    <div class="contact-row">
+      <a href="mailto:karthikj18@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/karthikeyan-jaganathan/">LinkedIn</a>
+      <a href="https://www.credly.com/users/karthikeyan-jaganathan.4eeb4a43">Credly</a>
+    </div>
+  </div>
+</footer>
+
+</x-dc>
+</body>
+</html>
