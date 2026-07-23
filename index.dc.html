@@ -31,7 +31,9 @@
     .section-label{color:var(--color-accent);margin:0 0 var(--space-2);font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-family:var(--font-heading)}
     .cert-card{flex-direction:row;align-items:center;gap:var(--space-4);padding:var(--space-3) var(--space-4)}
     .cert-badge{flex:none;width:72px;height:72px;object-fit:contain;display:block}
-    .cert-issuer{height:20px;width:auto;display:block;margin-top:6px}
+    .cert-issuer-row{display:flex;align-items:center;gap:6px;margin-top:6px}
+    .cert-issuer{height:20px;width:auto;display:block}
+    .cert-issuer-row span{font-size:13px;font-weight:600;color:var(--color-neutral-700)}
     .logo-tile{display:flex;flex-direction:row;align-items:center;gap:10px;padding:10px 18px;width:fit-content}
     .logo-tile img{height:26px;width:auto;display:block}
     .logo-mono{width:26px;height:26px;border-radius:var(--radius-sm);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:10px;font-family:var(--font-heading);flex:none}
@@ -196,19 +198,19 @@
       <div style="display:flex;flex-direction:column;gap:var(--space-2)">
         <div class="card elev-sm cert-card">
           <img class="cert-badge" src="assets/certs/azure-data-engineer-associate.png" alt="Microsoft Certified: Azure Data Engineer Associate badge">
-          <div><h4 class="card-title" style="font-size:16px">Microsoft Certified: Azure Data Engineer Associate</h4><img class="cert-issuer" src="assets/tech-logos/microsoft.svg" alt="Microsoft"></div>
+          <div><h4 class="card-title" style="font-size:16px">Microsoft Certified: Azure Data Engineer Associate</h4><div class="cert-issuer-row"><img class="cert-issuer" src="assets/tech-logos/microsoft.svg" alt=""><span>Microsoft</span></div></div>
         </div>
         <div class="card elev-sm cert-card">
           <img class="cert-badge" src="assets/certs/snowflake-sales-professional.png" alt="Snowflake Sales Professional Accreditation badge">
-          <div><h4 class="card-title" style="font-size:16px">Snowflake Sales Professional Accreditation</h4><img class="cert-issuer" src="assets/tech-logos/snowflake.svg" alt="Snowflake"></div>
+          <div><h4 class="card-title" style="font-size:16px">Snowflake Sales Professional Accreditation</h4><div class="cert-issuer-row"><img class="cert-issuer" src="assets/tech-logos/snowflake.svg" alt=""><span>Snowflake</span></div></div>
         </div>
         <div class="card elev-sm cert-card">
           <img class="cert-badge" src="assets/certs/talend-data-integration-developer.png" alt="Certified Talend Data Integration Developer badge">
-          <div><h4 class="card-title" style="font-size:16px">Certified Talend Data Integration Developer</h4><img class="cert-issuer" src="assets/tech-logos/talend.svg" alt="Talend"></div>
+          <div><h4 class="card-title" style="font-size:16px">Certified Talend Data Integration Developer</h4><div class="cert-issuer-row"><img class="cert-issuer" src="assets/tech-logos/talend.svg" alt=""><span>Qlik Talend</span></div></div>
         </div>
         <div class="card elev-sm cert-card">
           <img class="cert-badge" src="assets/certs/microsoft-technology-associate.svg" alt="Microsoft Technology Associate badge">
-          <div><h4 class="card-title" style="font-size:16px">Microsoft Technology Associate (SQL Server)</h4><img class="cert-issuer" src="assets/tech-logos/microsoft.svg" alt="Microsoft"></div>
+          <div><h4 class="card-title" style="font-size:16px">Microsoft Technology Associate (SQL Server)</h4><div class="cert-issuer-row"><img class="cert-issuer" src="assets/tech-logos/microsoft.svg" alt=""><span>Microsoft</span></div></div>
         </div>
       </div>
     </div>
