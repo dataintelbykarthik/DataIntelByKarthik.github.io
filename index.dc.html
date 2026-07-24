@@ -36,6 +36,13 @@
     .logo-tile img{height:26px;width:auto;display:block}
     .logo-mono{width:26px;height:26px;border-radius:var(--radius-sm);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:10px;font-family:var(--font-heading);flex:none}
     .arch-icon{width:26px;height:26px;border-radius:var(--radius-sm);background:var(--color-accent-100);color:var(--color-accent-700);display:flex;align-items:center;justify-content:center;flex:none}
+    .projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-3)}
+    .project-card{display:flex;flex-direction:column;gap:4px}
+    .project-num{font-size:22px;font-weight:700;color:var(--color-text);font-family:var(--font-heading);line-height:1;margin:0 0 4px}
+    .project-kicker{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--color-accent-700)}
+    .project-outcome{font-size:13px;line-height:1.55}
+    .project-outcome b{color:var(--color-accent-700);font-family:var(--font-heading)}
+    .project-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
     .data-landscape{display:flex;flex-direction:column}
     .dl-layer{display:flex;align-items:center;gap:var(--space-3);background:var(--color-surface);border-radius:var(--radius-md);border-left:4px solid var(--color-accent);padding:var(--space-2) var(--space-3)}
     .dl-name{flex:none;width:120px;font-family:var(--font-heading);font-weight:600;font-size:13px}
@@ -51,6 +58,7 @@
       .about-grid{grid-template-columns:1fr !important}
       .skills-cert-grid{grid-template-columns:1fr !important}
       .platforms-arch-grid{grid-template-columns:1fr !important}
+      .projects-grid{grid-template-columns:1fr !important}
       .dl-layer{flex-direction:column;align-items:flex-start;gap:6px}
       .dl-name{width:auto}
     }
@@ -309,35 +317,78 @@
 
 <div class="wrap" style="padding-bottom:var(--space-8)">
   <h6 class="section-label">Projects Worked</h6>
-  <div style="display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-3)">
-    <div class="card elev-sm logo-tile">
-      <span class="arch-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path><path d="M21 3v5h-5"></path><path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path><path d="M3 21v-5h5"></path></svg></span>
-      <span>Mainframe Data &amp; Reports Migration to Snowflake</span>
+  <div class="projects-grid" style="margin-top:var(--space-3)">
+
+    <div class="card elev-sm project-card">
+      <div class="project-num">Project 1</div>
+      <span class="project-kicker">Finance · Data Architect</span>
+      <h4 class="card-title">Mainframe Data &amp; Reports Migration to Snowflake</h4>
+      <p class="card-body">Migrated legacy mainframe (COBOL/DB2) batch data and reports to Snowflake. Re-engineered nightly extracts into automated pipelines and rebuilt reporting on modern BI tooling.</p>
+      <div class="hr" style="margin:var(--space-2) 0"></div>
+      <p class="project-outcome"><b>Outcome:</b> Reporting cycle cut from overnight batch to under 2 hours; mainframe MIPS costs eliminated.</p>
+      <div class="project-tags"><span class="tag tag-accent">Snowflake</span><span class="tag tag-accent-2">Talend</span><span class="tag tag-neutral">SQL Server</span></div>
     </div>
-    <div class="card elev-sm logo-tile">
-      <span class="arch-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path><path d="M21 3v5h-5"></path><path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path><path d="M3 21v-5h5"></path></svg></span>
-      <span>Modernization Enterprise Data Analytical Platform</span>
+
+    <div class="card elev-sm project-card">
+      <div class="project-num">Project 2</div>
+      <span class="project-kicker">Telecom · Cloud Data Architect</span>
+      <h4 class="card-title">Modernization Enterprise Data Analytical Platform</h4>
+      <p class="card-body">Modernized a legacy on-prem analytical platform into a cloud-native architecture on Azure and Microsoft Fabric, consolidating siloed marts into a governed lakehouse.</p>
+      <div class="hr" style="margin:var(--space-2) 0"></div>
+      <p class="project-outcome"><b>Outcome:</b> Platform TCO reduced 30%; unified reporting delivered across 6 business units.</p>
+      <div class="project-tags"><span class="tag tag-accent">Azure</span><span class="tag tag-accent">Microsoft Fabric</span><span class="tag tag-accent-2">Power BI</span></div>
     </div>
-    <div class="card elev-sm logo-tile">
-      <span class="arch-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path><path d="M21 3v5h-5"></path><path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path><path d="M3 21v-5h5"></path></svg></span>
-      <span>Enterprise Data Platform Modernization</span>
+
+    <div class="card elev-sm project-card">
+      <div class="project-num">Project 3</div>
+      <span class="project-kicker">Oil &amp; Gas · Data Architect</span>
+      <h4 class="card-title">Enterprise Data Platform Modernization</h4>
+      <p class="card-body">Led architecture for modernizing an enterprise data platform spanning ingestion, warehousing, and governance across Azure Data Factory, Synapse, and Databricks.</p>
+      <div class="hr" style="margin:var(--space-2) 0"></div>
+      <p class="project-outcome"><b>Outcome:</b> Data latency cut from days to hours; established a single source of truth for enterprise reporting.</p>
+      <div class="project-tags"><span class="tag tag-accent">Azure</span><span class="tag tag-accent-2">Databricks</span><span class="tag tag-neutral">Azure Synapse</span></div>
     </div>
-    <div class="card elev-sm logo-tile">
-      <span class="arch-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path><path d="M21 3v5h-5"></path><path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path><path d="M3 21v-5h5"></path></svg></span>
-      <span>Legacy Data Platform Migration</span>
+
+    <div class="card elev-sm project-card">
+      <div class="project-num">Project 4</div>
+      <span class="project-kicker">Higher Education · Data Architect</span>
+      <h4 class="card-title">Legacy Data Platform Migration</h4>
+      <p class="card-body">Migrated a legacy on-prem data warehouse to Snowflake and AWS, re-platforming ETL jobs from Informatica to Talend and Fabric pipelines.</p>
+      <div class="hr" style="margin:var(--space-2) 0"></div>
+      <p class="project-outcome"><b>Outcome:</b> Legacy infrastructure decommissioned; ETL runtime improved 40%.</p>
+      <div class="project-tags"><span class="tag tag-accent">Snowflake</span><span class="tag tag-accent-2">AWS</span><span class="tag tag-neutral">Talend</span></div>
     </div>
-    <div class="card elev-sm logo-tile">
-      <span class="arch-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path><path d="M21 3v5h-5"></path><path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path><path d="M3 21v-5h5"></path></svg></span>
-      <span>Mortgage Data Cloud Modernization</span>
+
+    <div class="card elev-sm project-card">
+      <div class="project-num">Project 5</div>
+      <span class="project-kicker">Mortgage · Cloud Architect</span>
+      <h4 class="card-title">Mortgage Data Cloud Modernization</h4>
+      <p class="card-body">Migrated on-premises DWH to Snowflake/Azure. Built ADF pipelines with ADLS Gen2 staging and a self-service Power BI environment for loan servicing teams.</p>
+      <div class="hr" style="margin:var(--space-2) 0"></div>
+      <p class="project-outcome"><b>Outcome:</b> Data refresh SLAs up 35%; 50+ business users onboarded to self-service BI.</p>
+      <div class="project-tags"><span class="tag tag-accent">Snowflake</span><span class="tag tag-accent-2">Azure Data Factory</span><span class="tag tag-neutral">Power BI</span></div>
     </div>
-    <div class="card elev-sm logo-tile">
-      <span class="arch-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h4l2-7 4 14 2-7h6"></path></svg></span>
-      <span>Banking Real-Time Transaction Analytics Platform</span>
+
+    <div class="card elev-sm project-card">
+      <div class="project-num">Project 6</div>
+      <span class="project-kicker">Banking · Solutions Architect</span>
+      <h4 class="card-title">Banking Real-Time Transaction Analytics Platform</h4>
+      <p class="card-body">Built a real-time transaction analytics platform ingesting streaming banking data into a lakehouse, powering fraud-monitoring dashboards for the risk team.</p>
+      <div class="hr" style="margin:var(--space-2) 0"></div>
+      <p class="project-outcome"><b>Outcome:</b> Fraud-detection latency reduced from hours to under 5 minutes.</p>
+      <div class="project-tags"><span class="tag tag-accent">Databricks</span><span class="tag tag-accent-2">Kafka</span><span class="tag tag-neutral">Power BI</span></div>
     </div>
-    <div class="card elev-sm logo-tile">
-      <span class="arch-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="2.2"></circle><circle cx="12" cy="4" r="1.6"></circle><circle cx="12" cy="20" r="1.6"></circle><circle cx="4" cy="12" r="1.6"></circle><circle cx="20" cy="12" r="1.6"></circle><path d="M12 6.2V9.8M12 14.2v3.6M6 12h3.6M14.4 12H18"></path></svg></span>
-      <span>Digital Data Hub</span>
+
+    <div class="card elev-sm project-card" style="grid-column:1 / -1">
+      <div class="project-num">Project 7</div>
+      <span class="project-kicker">E-commerce · Data Architect</span>
+      <h4 class="card-title">Digital Data Hub</h4>
+      <p class="card-body">Designed a Digital Data Hub integrating e-commerce transactional, clickstream, and CRM data into a governed Snowflake hub for unified customer analytics.</p>
+      <div class="hr" style="margin:var(--space-2) 0"></div>
+      <p class="project-outcome"><b>Outcome:</b> Single customer view enabled across 4 channels; new source integration time cut from weeks to days.</p>
+      <div class="project-tags"><span class="tag tag-accent">Snowflake</span><span class="tag tag-accent-2">Azure Data Factory</span><span class="tag tag-neutral">Power BI</span></div>
     </div>
+
   </div>
 </div>
 
@@ -346,7 +397,7 @@
     <span style="font-size:13px;color:var(--color-neutral-700)">© 2026 Karthikeyan Jaganathan</span>
     <div class="contact-row">
       <a href="mailto:karthikj18@gmail.com">Email</a>
-      <a href="https://www.linkedin.com/in/karthikeyan-jaganathan/">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/karthik-jaganathan/">LinkedIn</a>
       <a href="https://www.credly.com/users/karthikeyan-jaganathan.4eeb4a43">Credly</a>
     </div>
   </div>
